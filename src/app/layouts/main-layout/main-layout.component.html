@@ -1,4 +1,37 @@
-<div class="w-11/12 md:w-9/12 h-screen mx-auto  flex flex-col md:flex-row py-4">
+<!-- <div class="flex flex-col w-11/12 h-screen py-4 mx-auto md:w-9/12 md:flex-row">
   <welcome-page class="w-full md:w-1/2 h-[10vh] md:h-full min-h-[100px]"/>
-  <register class="w-full md:w-1/2 h-full"/>
+  <register class="w-full h-full md:w-1/2"/>
+</div> -->
+
+<div class="flex items-center justify-center min-h-screen bg-dark-500">
+  <div class="flex w-full max-w-4xl overflow-hidden bg-white rounded-lg shadow-md">
+    
+    <div class="hidden w-1/2 md:block">
+      <!-- <img src="coplan-1.webp" class="object-cover w-full h-full"> -->
+      <welcome-page class="object-cover w-full h-full"/>
+    </div>
+    
+    <div class="w-full p-8 md:w-1/2 bg-light-200">
+      <div class="mb-4">
+        <div class="flex justify-around">
+          <button
+            class="text-lg focus:outline-none"
+            [ngClass]="{'border-b-2 border-primary': currentTab === 'login'}"
+            (click)="selectTab('login')"
+          > Iniciar Sesión
+          </button>
+          <button
+            class="text-lg focus:outline-none"
+            [ngClass]="{'border-b-2 border-secondary': currentTab === 'register'}"
+            (click)="selectTab('register')"
+          > Registrarse
+          </button>
+        </div>
+      </div>
+      <div>
+        <login (tab)="selectTab($event)" *ngIf="currentTab === 'login'"></login>
+        <register *ngIf="currentTab === 'register'"></register>
+      </div>
+    </div>
+  </div>
 </div>

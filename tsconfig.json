@@ -27,6 +27,8 @@
       "@services/*": ["src/app/services/*"],
       "@interfaces/*": ["src/app/interfaces/*"],
       "@register/*":["src/app/views/register/*"],
+      "@login/*":["src/app/views/login/*"],
+      "@not-found/*":["src/app/views/not-found/*"],
       "@welcome/*":["src/app/views/welcome-page/*"],
       "@mainlayout/*":["src/app/layouts/main-layout/*"]
     }
