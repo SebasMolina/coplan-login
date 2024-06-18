@@ -27,7 +27,7 @@ export class RegisterComponent {
     email: 'Email',
     password: 'Contraseña',
     confirmPassword: 'Repite la contraseña',
-    submit: 'enviar!'
+    submit: 'Enviar'
   };
 
   // TODO create user

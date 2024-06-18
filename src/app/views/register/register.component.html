@@ -3,38 +3,26 @@
 
   <div class="flex flex-col items-center justify-center">
     <h1 class="text-4xl font-bold">Bienvenido a Coplan:</h1>
-    <h4 class="text-lg mt-2">Por favor complete los siguientes campos para continuar en la aplicación</h4>
+    <h4 class="text-lg mt-2">Por favor complete los siguientes campos para continuar en la aplicación.</h4>
   </div>
 
   <form action="registry" class="flex flex-col gap-3 mt-8">
-    <input type="text"
-      [(ngModel)]="newUser.name"
-      name="name"
-      id="name"
-      placeholder="{{ placeHolder.name }}">
+    <input type="text" [(ngModel)]="newUser.name" name="name" id="name" placeholder="{{ placeHolder.name }}">
 
-    <input type="email"
-      [(ngModel)]="newUser.email"
-      name="email"
-      id="email"
+    <input type="email" class="border-amber-800" [(ngModel)]="newUser.email" name="email" id="email"
       placeholder="{{ placeHolder.email }}">
 
-    <input type="password"
-      [(ngModel)]="newUser.password"
-      name="password"
-      id="password"
+    <input type="password" [(ngModel)]="newUser.password" name="password" id="password"
       placeholder="{{ placeHolder.password }}">
 
-    <input type="password"
-      [(ngModel)]="confirmPassword"
-      name="confirmPassword"
-      id="confirmPassword"
+    <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" id="confirmPassword"
       placeholder="{{ placeHolder.confirmPassword }}">
 
-    <input type="submit"
-      name="submit"
-      value="{{ placeHolder.submit }}"
-      id="registry">
+    <div class="flex justify-center items-center mt-6">
+      <input type="submit"
+        class="cursor-pointer w-32 border-2 border-amber-800 bg-white text-black px-4 py-3 rounded-md hover:bg-amber-800 hover:text-white"
+        name="submit" value="{{ placeHolder.submit }}" id="registry">
+    </div>
   </form>
 
 </div>
