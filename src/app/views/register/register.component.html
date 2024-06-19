@@ -2,21 +2,22 @@
   flex justify-center h-full flex-col justify-center sm:gap-6 gap-3">
 
   <div class="flex flex-col items-center justify-center">
-    <h1 class="text-4xl font-bold">Bienvenido a Coplan:</h1>
-    <h4 class="text-lg mt-2">Por favor complete los siguientes campos para continuar en la aplicación.</h4>
+    <h1 class="text-3xl font-bold">Bienvenido a Coplan:</h1>
+    <h4 class="text-base mt-2">Por favor complete los siguientes campos para continuar en la aplicación.</h4>
   </div>
 
   <form action="registry" class="flex flex-col gap-3 mt-8">
-    <input type="text" [(ngModel)]="newUser.name" name="name" id="name" placeholder="{{ placeHolder.name }}">
+    <input type="text" [(ngModel)]="newUser.name" name="name" id="name" placeholder="{{ placeHolder.name }} "
+     class="w-full px-3 py-2 mb-3 border rounded appearance-none text-primary-700 ">
 
     <input type="email" class="border-amber-800" [(ngModel)]="newUser.email" name="email" id="email"
-      placeholder="{{ placeHolder.email }}">
+      placeholder="{{ placeHolder.email }}"  class="w-full px-3 py-2 mb-3 border rounded appearance-none text-primary-700">
 
     <input type="password" [(ngModel)]="newUser.password" name="password" id="password"
-      placeholder="{{ placeHolder.password }}">
+      placeholder="{{ placeHolder.password }}" class="w-full px-3 py-2 mb-3 border rounded appearance-none text-primary-700">
 
     <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" id="confirmPassword"
-      placeholder="{{ placeHolder.confirmPassword }}">
+      placeholder="{{ placeHolder.confirmPassword }}" class="w-full px-3 py-2 mb-3 border rounded appearance-none text-primary-700">
 
     <div class="flex justify-center items-center mt-6">
       <input type="submit"
