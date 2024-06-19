@@ -6,18 +6,22 @@
     <h4 class="text-base mt-2">Por favor complete los siguientes campos para continuar en la aplicación.</h4>
   </div>
 
-  <form action="registry" class="flex flex-col gap-3 mt-8">
-    <input type="text" [(ngModel)]="newUser.name" name="name" id="name" placeholder="{{ placeHolder.name }} "
-     class="w-full px-3 py-2 mb-3 border rounded appearance-none text-primary-700 ">
+  <form  [formGroup]="registryForm" action="registry" class="flex flex-col gap-3 mt-8">
+    <input type="text" formControlName="name" placeholder="{{ placeHolder.name }}"
+      class="w-full px-3 py-2 mb-3 border rounded appearance-none text-primary-700">
 
-    <input type="email" class="border-amber-800" [(ngModel)]="newUser.email" name="email" id="email"
-      placeholder="{{ placeHolder.email }}"  class="w-full px-3 py-2 mb-3 border rounded appearance-none text-primary-700">
+    <input type="email" formControlName="email" placeholder="{{ placeHolder.email }}"
+      class="w-full px-3 py-2 mb-3 border rounded appearance-none text-primary-700 border-amber-800">
+      @if(registryForm.get('email')?.hasError('invalidEmail')){
+        <div class="text-danger-500 w-full ">El mail que se esta ingresando no es valido</div>
+      }
 
-    <input type="password" [(ngModel)]="newUser.password" name="password" id="password"
-      placeholder="{{ placeHolder.password }}" class="w-full px-3 py-2 mb-3 border rounded appearance-none text-primary-700">
+    <input type="password" formControlName="password" placeholder="{{ placeHolder.password }}"
+      class="w-full px-3 py-2 mb-3 border rounded appearance-none text-primary-700">
 
-    <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" id="confirmPassword"
-      placeholder="{{ placeHolder.confirmPassword }}" class="w-full px-3 py-2 mb-3 border rounded appearance-none text-primary-700">
+    <input type="password" formControlName="confirmPassword" placeholder="{{ placeHolder.confirmPassword }}"
+      class="w-full px-3 py-2 mb-3 border rounded appearance-none text-primary-700">
+
 
     <div class="flex justify-center items-center mt-6">
       <input type="submit"
