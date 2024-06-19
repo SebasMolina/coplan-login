@@ -15,13 +15,13 @@
         <div class="flex justify-around">
           <button
             class="text-lg focus:outline-none"
-            [ngClass]="{'border-b-2 border-primary': currentTab === 'login'}"
+            [ngClass]="{'border-b-2 border-primary-500': currentTab === 'login'}"
             (click)="selectTab('login')"
           > Iniciar Sesión
           </button>
           <button
             class="text-lg focus:outline-none"
-            [ngClass]="{'border-b-2 border-secondary': currentTab === 'register'}"
+            [ngClass]="{'border-b-2 border-secondary-500': currentTab === 'register'}"
             (click)="selectTab('register')"
           > Registrarse
           </button>

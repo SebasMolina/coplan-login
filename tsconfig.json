@@ -29,6 +29,7 @@
       "@register/*":["src/app/views/register/*"],
       "@login/*":["src/app/views/login/*"],
       "@not-found/*":["src/app/views/not-found/*"],
+      "@forgot-password/*":["src/app/views/forgot-password/*"],
       "@welcome/*":["src/app/views/welcome-page/*"],
       "@mainlayout/*":["src/app/layouts/main-layout/*"]
     }
