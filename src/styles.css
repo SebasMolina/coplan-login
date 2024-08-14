@@ -2,3 +2,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.input-primary{
+  @apply w-full border rounded-xl overflow-hidden resize-none  ring-1 ring-transparent focus:ring-primary-300 focus:outline-none text-black p-2 transition ease-in-out duration-300
+}
+
+.coplan-icon {
+  background-image: url('/assets/coplan-icon.png');
+  background-size: cover;
+  background-position: center;
+}

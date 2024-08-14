@@ -1,33 +1,94 @@
-<div class="rounded-xl h-full p-3
-  flex justify-center h-full flex-col justify-center sm:gap-6 gap-3">
-
-  <div class="flex flex-col items-center justify-center">
-    <h1 class="text-3xl font-bold">Bienvenido a Coplan:</h1>
-    <h4 class="text-base mt-2">Por favor complete los siguientes campos para continuar en la aplicación.</h4>
-  </div>
-
+<!-- <div class="flex flex-col justify-center h-full gap-3 p-3 rounded-xl sm:gap-6"> -->
+  <!-- <div class="flex flex-col items-center justify-center"> -->
+    <!-- <h1 class="text-3xl font-bold">Registrarse</h1> -->
+    <!-- <h1 class="text-3xl font-bold">Bienvenido a Coplan:</h1>
+    <h4 class="mt-2 text-base">Por favor complete los siguientes campos para continuar en la aplicación.</h4> -->
+  <!-- </div> -->
+<!-- <div>
+  <h2 class="mb-6 text-2xl font-bold text-center">Registrarse</h2>
   <form  [formGroup]="registryForm" action="registry" class="flex flex-col gap-3 mt-8">
-    <input type="text" formControlName="name" placeholder="{{ placeHolder.name }}"
-      class="w-full px-3 py-2 mb-3 border rounded appearance-none text-primary-700">
-
+    <label for="email" class="block text-sm font-bold text-primary-700">Correo Electrónico</label>
     <input type="email" formControlName="email" placeholder="{{ placeHolder.email }}"
-      class="w-full px-3 py-2 mb-3 border rounded appearance-none text-primary-700 border-amber-800">
+      class="input-primary">
       @if(registryForm.get('email')?.hasError('invalidEmail')){
-        <div class="text-danger-500 w-full ">El mail que se esta ingresando no es valido</div>
+        <div class="w-full text-danger-500 ">El mail que se esta ingresando no es valido</div>
       }
-
+      <label for="email" class="block text-sm font-bold text-primary-700">Contraseña</label>
     <input type="password" formControlName="password" placeholder="{{ placeHolder.password }}"
-      class="w-full px-3 py-2 mb-3 border rounded appearance-none text-primary-700">
+      class="input-primary">
 
     <input type="password" formControlName="confirmPassword" placeholder="{{ placeHolder.confirmPassword }}"
-      class="w-full px-3 py-2 mb-3 border rounded appearance-none text-primary-700">
+      class="w-full px-3 py-2 border rounded appearance-none text-primary-700">
 
+      <input type="text" formControlName="name" placeholder="{{ placeHolder.name }}"
+      class="w-full px-3 py-2 border rounded appearance-none text-primary-700">
 
-    <div class="flex justify-center items-center mt-6">
-      <input type="submit"
-        class="cursor-pointer w-32 border-2 border-amber-800 bg-white text-black px-4 py-3 rounded-md hover:bg-amber-800 hover:text-white"
+      <div class="flex items-center justify-center mt-6">
+        <input type="submit"
+        class="w-32 px-4 py-3 text-black bg-white border-2 rounded-md cursor-pointer border-amber-800 hover:bg-amber-800 hover:text-white"
         name="submit" value="{{ placeHolder.submit }}" id="registry">
+      </div>
+    </form>
+  </div> -->
+  
+  <div>
+    <h2 class="mb-6 text-2xl font-bold text-center">Registrarse</h2>
+    <form  [formGroup]="registryForm" action="registry" >
+      <div class="mb-4">
+        <label for="name" class="block mb-2 text-sm font-bold text-primary-700">Nombre de usuario</label>
+        <input
+          type="text"
+          id="name"
+          class="input-primary"
+          formControlName="name" 
+          placeholder="{{ placeHolder.name }}"
+          autocomplete="new-username"
+        >
+      </div>
+      <div class="mb-4">
+        <label for="email" class="block mb-2 text-sm font-bold text-primary-700">Correo Electrónico</label>
+        <input
+        type="email"
+        id="email"
+        class="input-primary"
+        formControlName="email"
+        placeholder="{{ placeHolder.email }}"
+        autocomplete="new-username"
+      >
+      @if(registryForm.get('email')?.hasError('invalidEmail')){
+        <div class="w-full text-danger-500 ">El mail que se esta ingresando no es valido</div>
+      }
+    </div>
+    <div class="mb-6">
+      <label for="password" class="block mb-2 text-sm font-bold text-primary-700">Contraseña</label>
+      <input 
+        type="password"
+        id="password" 
+        class="input-primary"
+        formControlName="password" 
+        placeholder="{{ placeHolder.password }}"
+        autocomplete="new-password"
+      >
+    </div>
+    <div class="mb-6">
+      <label for="confirmPassword" class="block mb-2 text-sm font-bold text-primary-700"> Repetir la contraseña</label>
+      <input 
+        type="password"
+        id="confirmPassword" 
+        class="input-primary" 
+        formControlName="confirmPassword"
+        placeholder="{{ placeHolder.confirmPassword }}"
+        autocomplete="new-password"
+      >
+    </div>
+    <div class="flex items-center justify-center">
+      <button
+        name="submit" value="{{ placeHolder.submit }}" id="registry"
+        class="px-3 py-2 font-bold text-white rounded bg-primary-500 hover:bg-primary-700"
+        type="submit"
+      > Registrarse
+      </button>
     </div>
   </form>
-
 </div>
+

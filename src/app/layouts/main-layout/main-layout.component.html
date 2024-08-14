@@ -10,7 +10,7 @@
       <!-- <img src="coplan-1.webp" class="object-cover w-full h-full"> -->
       <welcome-page class="object-cover w-full h-full"/>
     </div>
-    <div class="w-full p-8 md:w-1/2 bg-light-200">
+    <div class="w-full min-h-screen p-8 md:w-1/2 bg-light-200">
       <div class="mb-4">
         <div class="flex justify-around">
           <button
@@ -21,7 +21,7 @@
           </button>
           <button
             class="text-lg focus:outline-none"
-            [ngClass]="{'border-b-2 border-secondary-500': currentTab === 'register'}"
+            [ngClass]="{'border-b-2 border-primary-500': currentTab === 'register'}"
             (click)="selectTab('register')"
           > Registrarse
           </button>
